@@ -10,6 +10,9 @@ app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.get("/", (req, res) => {
+  res.render("index.ejs"); // assuming EJS is configured
+});
 
 // Route to render the main page
 app.get("/", async (req, res) => {
